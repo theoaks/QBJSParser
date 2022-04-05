@@ -27,7 +27,7 @@ Parse JSON coming from [jQuery QueryBuilder](http://querybuilder.js.org/), such 
 ## Installation
 
 ```bash
-    $ composer require fourlabs/qbjs-parser
+    $ composer require theoaks/qbjs-parser
 ```
 
 ## Quick Tour

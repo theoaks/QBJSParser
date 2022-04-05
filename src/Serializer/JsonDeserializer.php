@@ -19,7 +19,7 @@ class JsonDeserializer implements DeserializerInterface
     public function deserialize(string $string): RuleGroupInterface
     {
         $decodedRuleGroup = json_decode($string, true);
-        if (is_null($decodedRuleGroup) || !is_array($decodedRuleGroup)) {
+        if (!is_array($decodedRuleGroup)) {
             throw new JsonDeserializerInvalidJsonException();
         }
 
@@ -117,9 +117,9 @@ class JsonDeserializer implements DeserializerInterface
      * @param string $type
      * @param mixed  $value
      *
-     * @return mixed
+     * @return mixed|void
      */
-    private function convertValueAccordingToType(string $type, $value)
+    private function convertValueAccordingToType(string $type, mixed $value)
     {
         if (is_null($value) || 'null' === $value || 'NULL' === $value) {
             return; // nulls shouldn't be converted
